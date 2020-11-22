@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set数据结构特点：无论何时都不会有重复的成员
+        var s = new Set()
+        //size相当于length，表示长度
+        console.log(s.size);
+
+        // new Set里面接收数组要加[]
+        var s1 = new Set([1,2,3,4,5,4,3,2,1])
+        console.log(s1);//打印出来1,2,3,4,5（数组去重）
+        console.log(...s1);//打印出来还是1,2,3,4,5
+    </script>
+</body>
+</html>

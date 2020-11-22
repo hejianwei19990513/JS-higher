@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        var obj = {
+            name:"jjy"
+        }
+        function fn(a,b){
+            console.log(this);
+            console.log(a+b);
+        }
+        // 这里并不会调用fn这个函数，但是会改变fn里面的this指向,返回是原函数this改变指向后的新函数
+        fn.bind(obj)
+        var f = fn.bind(obj,1,2)
+        f()
+
+        // 主要应用于函数不需要立即调用，但想改变这个函数里面的this指向
+        // 比如：我想点击任何一个按钮立马禁用，过3秒这个按钮会在三秒后恢复点击
+        var btns = document.querySelectorAll("button")
+        for(var i = 0 ; i < btns.length ; i++) {
+            btns[i].onclick = function(){
+                this.disabled = true
+                setTimeout(function(){
+                    this.disabled = false
+                    // btns[i].disabled = false //这样写的话会报错，因为在没点击按钮之前循环已经走完，这里i=3，但是btn[3]不存在
+                }.bind(this),3000)//这里把定时器里面的this指向改变为btns(这里bind括号里的this)
+            }
+        }
+    </script>
+</body>
+</html>

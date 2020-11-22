@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some 一些【有返回值，返回值是布尔型】
+        var arr = [1,2,3,4,5,6,7,8,9,10]
+        // 当前数组中是否有大于4的成员
+        var arr1 = arr.some(function(value,index){
+            return value >5
+        })
+        console.log(arr1);//这里输出为true
+    </script>
+</body>
+</html>

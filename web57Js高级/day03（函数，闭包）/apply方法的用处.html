@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:"jjy"
+        }
+        function fn(arr){
+            console.log(this);
+            console.log(arr);
+        }
+        // 把fnthis指向从window变成obj，输入参数必须是伪数组
+        fn.apply(obj,["1","2"])
+
+        // apply主要应用与数组：求数组的内置对象的最大值
+        var arr = [1,2,3,4,5]
+        // 这里指回max的调用者Math，不要写null
+        console.log(Math.max.apply(Math,arr1));
+    </script>
+</body>
+</html>

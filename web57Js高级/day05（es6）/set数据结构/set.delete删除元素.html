@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = new Set([1,2,3,4,5])
+        console.log(s);//因为下面s.delete(2)相当于被提升了，所以输出1,3,4,5
+        // delete删除set数据结构里面的2值【并不是size长度，也不是索引号】
+        s.delete(2)
+        console.log(s);//输出为1,3,4,5
+        console.log(s.delete(6));//当set成员里没有该元素时，输出为false
+    </script>
+</body>
+</html>

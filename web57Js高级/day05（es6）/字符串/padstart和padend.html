@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 22;
+        // padStart给原字符串首部填充，第一个参数代表填充后的长度【参数小于等于原字符串长度时，不填充】，第二个参数代表需要填充的字符，【会改变原字符串】
+        var a1 = a.toString().padStart(3,"0")
+        console.log(a1);//输出为022
+        var a2 = a.toString().padStart(2,"0")
+        console.log(a2);//输出为22不变
+
+        var b = 22;
+        // padEnd给原字符串尾部填充，第一个参数代表填充后的长度【参数小于等于原字符串长度时，不填充】，第二个参数代表需要填充的字符，【会改变原字符串】
+        var b1 = b.toString().padEnd(3,"0")
+        console.log(b1);//输出为220
+        var b2 = b.toString().padEnd(2,"0")
+        console.log(b2);//输出为22
+    </script>
+</body>
+</html>

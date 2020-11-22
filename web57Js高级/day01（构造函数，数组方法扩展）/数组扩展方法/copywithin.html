@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [1,2,3,4,5]
+        var arr2 = [1,2,3,4,5]
+        var arr3 = [1,2,3,4,5]
+        var arr4 = [1,2,3,4,5]
+        // object.prototype.copywithin(target,start,end)【这里会改变原数组】
+        // target是第几个索引号开始（包含），如果为负数，就从末尾开始，
+        // start从第几个索引号开始复制（包含），如果为负数，就从length+index开始
+        // end  start开始复制到第几个索引号结束(不包含),如果为负数,就复制到lenth+index结束
+        // 例子:
+        console.log(arr1.copyWithin(-2));
+        //从倒数第二个数【这里不是索引号为从末尾数012的2】开始复制（就是4），因为没有start和end参数所以从开头开始复制，所以4和5就被替换成1,2所以输出结果为[1,2,3,1,2];
+
+        console.log(arr2.copyWithin(2));
+        // 从第二个索引号开始（也就是3），因为没有start和end参数，所以从开头开始复制，所以3,4和5就被替换成1,2,3所以输出结果为[1,2,1,2,3];
+
+        console.log(arr3.copyWithin(-2,2,3));
+        // 从倒数第二个数【这里不是索引号为从末尾索引号012的2】开始复制（就是4），因为start是2，end是3，所以复制的是[3,4),所以输出为[1,2,3,3,5]
+
+        console.log(arr4.copyWithin(-3,-4,-2));
+        // 从倒数第三个数【这里不是索引号为从末尾索引号0123的3】开始复制（就是3），因为start是1(-4+5)，end是3(-2+5)，所以复制的是[2,4),所以输出为[1,2,2,3,5]
+    </script>
+</body>
+</html>

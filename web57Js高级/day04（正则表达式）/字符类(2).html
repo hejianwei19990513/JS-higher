@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // *可以重复0次以上，>=0
+        var reg = /^a*$/
+        console.log(reg.test(""));//true
+        console.log(reg.test("a"));//true
+        console.log(reg.test("aa"));//true
+        console.log("---------------");
+
+
+        // +可以重复1次以上，>=1
+        var reg = /^a+$/
+        console.log(reg.test(""));//false
+        console.log(reg.test("a"));//true
+        console.log(reg.test("aa"));//true
+        console.log("---------------");
+
+
+        // ?可以重复0-1次，0||1
+        var reg = /^a?$/
+        console.log(reg.test(""));//true
+        console.log(reg.test("a"));//true
+        console.log(reg.test("aa"));//false
+        console.log("---------------");
+
+
+        // {n}只能重复n次，==n
+        var reg = /^a{2}$/
+        console.log(reg.test(""));//false
+        console.log(reg.test("a"));//false
+        console.log(reg.test("aa"));//true
+        console.log("---------------");
+
+
+        // {n,}能重复n次及以上，>=n
+        var reg = /^a{2,}$/
+        console.log(reg.test(""));//false
+        console.log(reg.test("a"));//false
+        console.log(reg.test("aa"));//true
+        console.log(reg.test("aaa"));//true
+        console.log("---------------");
+
+
+         // {n,m}能重复n次到m次（包含n和m），>=n && <=m【注意：这里n,m之间不能有空格】
+         var reg = /^a{2,3}$/
+        console.log(reg.test(""));//false
+        console.log(reg.test("a"));//false
+        console.log(reg.test("aa"));//true
+        console.log(reg.test("aaa"));//true
+        console.log(reg.test("aaaa"));//false
+        console.log("---------------");
+    </script>
+</body>
+</html>

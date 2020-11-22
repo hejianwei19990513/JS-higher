@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age) {
+            this.uname = uname;
+            this.age   = age;
+            
+            // return this//这里返回的是this也就是a变量
+
+            // return [1]//这里返回的是[1]
+
+            // 当return 返回的是一个值类型的时候，忽略这个值类型，返回this
+            // 当return 返回的是一个引用类型（复杂数据类型），忽略this，返回这个引用类型
+        }
+        var a = Star("小鞠","26")
+
+    </script>
+</body>
+</html>

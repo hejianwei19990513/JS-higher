@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(f,a,b,c) {
+            // arguments伪数组。指函数的实参
+            arguments[0](5,6)
+        }
+        function fun2(o,p,q,s) {
+            console.log(this.length);
+
+            // callee函数的形参
+            console.log(this.callee.length);
+            console.log(arguments.length);
+            console.log(arguments.callee.length);
+        }
+        fun(fun2,1,2,3,4,5)
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = new Set(["a","b"])
+        // 判断set数据结构里面是否含有某元素，是则返回true
+        console.log(s.has("a"));//这里还是返回true，不会受到下面s.delete("a")的影响（下面不会提升）
+        s.delete("a")
+    </script>
+</body>
+</html>

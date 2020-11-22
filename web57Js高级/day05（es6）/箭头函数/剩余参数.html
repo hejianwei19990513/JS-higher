@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  ...args可以接收剩余的所有参数
+        var fn = (a,...args) => {
+            console.log(a);
+            console.log(args);//输出为数组[20,30]
+            console.log(...args);//输出为两个数字20，30【不是数组】
+        }
+        fn(10,20,30)
+
+
+
+
+        var sum = (...args)=>{
+            var total = 0
+            args.forEach(item=>{
+                total += item
+            })
+            return total
+        }
+        console.log(sum(10,20,30));
+    </script>
+</body>
+</html>

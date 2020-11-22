@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个删除数组偶数项的方法
+        Array.prototype.del_even = function () {
+            var arr = []
+            for (var i = 0 ; i < this.length ; i++) {
+                if (i % 2 != 0 ) {
+                    arr.push(this[i])
+                }
+            }
+            return arr
+        }
+        var arr = [1, 2, 1, 2, 2, 100]
+        console.log(arr.del_even());
+    </script>
+</body>
+
+</html>

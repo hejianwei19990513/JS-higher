@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,type) {
+            this.uname=uname
+            this.type = type
+        }
+        function Son(uname,type) {
+            // 放里面可以给子构造函数添加父构造函数的属性和方法
+            // Father.call(this,1,2)
+        }
+        // 放外面为了执行父构造函数里面的方法，不玷污子构造函数，所以没有添加父构造函数的属性和方法
+        Father.call(Son,1,2)
+        var jjy = new Son(3,2)
+        console.log(jjy);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,type) {
+            this.uname = uname;
+            this.type = type;
+        }
+        function Son() {
+            // 这里的第一个参数this让Father构造函数指向这里的this（也就是Son）,后面两个数是传参
+            Father.call(this,"鞠婧祎","女神")
+        }
+        // 这里的son里面的uname="鞠婧祎"，type ="女神"，已经被固定
+        var jjy = new Son("1","2")//所以这里输出为uname="鞠婧祎"，type ="女神"，并不是uname="1"，type ="2"
+        console.log(jjy);
+
+
+
+        // function Father(uname,type) {
+        //     this.uname = uname;
+        //     this.type = type;
+        // }
+        // function Son(uname,type) {
+        //     // 这里的第一个参数this让Father构造函数指向这里的this（也就是Son）,后面两个数是传参
+        //     Father.call(this,uname,type)
+        // }
+        // var jjy = new Son("鞠婧祎","女神")
+        // console.log(jjy);
+        // console.log(Father.uname);
+    </script>
+</body>
+</html>

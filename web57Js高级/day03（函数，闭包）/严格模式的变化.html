@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        // 开启前可以输出10，但是使用严格模式后会报错，显示num is not difined
+        /* num = 10
+        console.log(num); */
+
+
+        /* var num1 = 10
+        // 这里会报错，因为在严格模式下不能删除已定义的变量
+        delete num1 */
+
+
+        // 在以前全局作用域的this指的是window，但是在严格模式下全局作用域的this指的是undefined，
+        function fn() {
+            console.log(this);
+        }
+        fn()
+
+
+        // 在以前构造函数不new的时候:当普通函数调用的this指的是window，但是在严格模式下this指的是undefined，
+        // 在实例化后（new），即使是在严格模式，里面的this还是指的实例化对象（这里是a）
+        function Star() {
+            this.sex='男'
+        }
+        var a = new Star()
+        console.log(a.sex);
+
+
+        // 定时器里面的this在严格模式下还是window
+        setTimeout(function(){
+            console.log(this);
+        })
+
+
+        // 绑定事件，对象还是指向调用者
+
+
+        // 在严格模式下，不能有重名的参数
+        function fn(a,a) {
+            console.log(a+a);
+        }
+        fn(1,2)//普通模式下输出为4，但是在严格模式下会报错
+
+
+        // 不允许在非函数代码块声明函数,比如下面例子
+        if(true) {
+            function fn(){
+
+            }
+        };
+        for(var i = 0 ; i <3;) {
+            function fn() {
+
+            }
+        }
+
+    </script>
+</body>
+</html>

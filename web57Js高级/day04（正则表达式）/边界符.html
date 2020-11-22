@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //边界符   ^ $
+        var reg = /123/
+
+        // 只要包含123都是true
+        console.log(reg.test(21234));//true
+
+
+        var reg = /^123/
+        //必须以123开头
+        console.log(reg.test(12345));//true
+        console.log(reg.test(112345));//false
+
+
+        var reg = /^123$/
+        //必须是123
+        console.log(reg.test(123));//true
+        console.log(reg.test(112345));//false
+    </script>
+</body>
+</html>

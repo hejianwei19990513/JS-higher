@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 闭包：指有权访问另外一个作用域里面变量的函数,这个变量所在的函数称为闭包
+        // 闭包的作用：延伸了变量的作用范围
+        function fn() {
+            var num = 10
+            function fn1() {
+                console.log(num);
+            }
+            fn1()
+        }
+        fn()//这里fn是闭包
+
+        // 我们fn外面的作用域可以访问fn内部的局部变量
+        function fn3() {
+            var num = Math.random()
+            return function() {
+                return num
+            }
+        }
+        var f = fn3() = function() {
+                return num
+            }
+        // 所以这里f1和f2都是访问的同一个num随机数，所以f1和f2是同一个数【地址和数据都一样】
+        var f1 = f()
+        var f2 = f()
+        console.log(f1,f2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function Star(uname,age) {
+            this.uname=uname;
+            this.age = age;
+        }
+        Star.prototype.sing = function(){
+            console.log("小鞠女神");
+        }
+        var jjy = new Star("鞠婧祎","26")
+        console.log(Star.prototype);
+        console.log(jjy.__proto__);
+        console.log(jjy.sing);
+
+        // constructor【对象原型里面的属性】指向其构造函数
+        console.log(Star.prototype.constructor);
+        console.log(jjy.__proto__.constructor); */
+
+
+        // 第二种情况：
+        function Star(uname,age) {
+            this.uname=uname;
+            this.age = age;
+        }
+        // 这里写相当于覆盖了之前的构造函数里面的prototype属性，其constructor属性就消失了，所以jjy.__proto__.constructor这里就不会指其原来的构造函数
+        Star.prototype= {
+            // 上面不会指向原来构造函数的问题解决点如下：再在构造函数prototype属性里加一个constructor:Star指向自己
+            constructor:Star,
+            sing:function(){
+                console.log("小鞠女神");
+            },
+        }
+        var jjy = new Star("鞠婧祎","26")
+        console.log(Star.prototype);
+        console.log(jjy.__proto__);
+        console.log(jjy.sing);
+
+        // constructor指向其构造函数
+        console.log(Star.prototype.constructor);
+        console.log(jjy.__proto__.constructor);
+
+    </script>
+</body>
+</html>

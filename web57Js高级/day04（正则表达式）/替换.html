@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea></textarea>
+    <button>留言</button>
+    <ul></ul>
+    <script>
+        var textarea = document.querySelector("textarea")
+        var btn = document.querySelector("button")
+        var ul = document.querySelector("ul")
+        btn.onclick = function () {
+            var li = document.createElement("li")
+            // 这里replace只会替换第一个字符串，早正则表达式后面加g代表全局匹配，i代表忽略大小写，gi两个都有
+            li.innerText = textarea.value.replace(/逼/g,"*")
+            ul.appendChild(li)
+        }
+    </script>
+</body>
+
+</html>

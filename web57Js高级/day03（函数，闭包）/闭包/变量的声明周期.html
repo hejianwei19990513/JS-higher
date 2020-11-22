@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量的生命周期
+
+        // 1全局变量
+        // 生：当打开浏览器的时候，在全局作用域下就有了变量
+        // 去世：当关闭浏览器窗口的时候，该变量就去世了
+
+
+        // 2局部变量
+        // 生：在函数调用的时候，在局部作用域下就有了变量
+        // 去世：在函数调用完毕的时候。该变量就去世了
+        function fn(){
+            var num = Math.random()
+            return num
+        }
+        var num = fn()
+        var num2 = fn()
+        //这两个变量地址和数值不一样，所以不是同一个，输出为false
+        console.log(num,num2);
+        console.log(num === num2);
+    </script>
+</body>
+</html>

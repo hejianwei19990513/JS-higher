@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function Father(uname,type) {
+            this.uname = uname;
+            this.type = type;
+        }
+        Father.prototype.money = function(){
+            console.log("1");
+        }
+        function Son(uname,type) {
+            Father.call(this,uname,type)
+        }
+        Son.prototype = Father.prototype
+        Son.prototype.exam = function(){
+            console.log("考试");
+        }
+        var jjy = new Son("鞠婧祎","女神")
+        jjy.money()
+        // 这样给son继承money方法，导致把son的方法给了父亲，不是我们想要的
+        console.dir(Father.prototype); */
+
+
+        // 解决方法：
+        function Father(uname,type) {
+            this.uname = uname;
+            this.type = type;
+        }
+        Father.prototype.money = function(){
+            console.log("1");
+        }
+        function Son(uname,type) {
+            Father.call(this,uname,type)
+        }
+        Son.prototype = new Father()
+        Son.prototype.constructor = Son
+        var jjy = new Son("鞠婧祎","女神")
+        jjy.money()
+        // 这里就没有把son的exam方法添加给父亲
+        console.dir(Father.prototype);
+    </script>
+</body>
+</html>

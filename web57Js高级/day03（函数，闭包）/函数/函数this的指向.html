@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        var btn = document.querySelector("button")
+        // 1普通函数
+        function fn(){
+            console.log(this);//这里this值window
+        }
+        fn();
+        // fn.call()
+
+        // 2对象的方法
+        var obj = {
+            sayhi:function(){
+                console.log(this);//这里this指obj
+            }
+        }
+        obj.sayhi()
+
+        // 3构造函数
+        function Star(){
+            this.name = "jjy"
+            console.log(this);//这里this指实例化对象a
+        }
+        var a = new Star()
+        
+        // 4绑定事件函数
+        btn.onclick = function(){
+            console.log(this);//这里this指btn
+        }
+
+        // 5定时器函数
+        setInterval(function(){
+            console.log(this);//这里this指window
+        },1000)
+
+        // 6立即执行函数
+        (function(){
+            console.log(this);//这里this指window
+        })()
+    </script>
+</body>
+</html>

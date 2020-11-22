@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age) {
+            this.uname=uname;
+            this.age = age;
+        }
+        // 共享方法，不会开辟新的内存空间【写在构造函数里面】
+        Star.prototype.sing = function(){
+            console.log("如意芳菲");
+        }
+        var jjy = new Star("鞠婧祎","26")
+        var zzh = new Star("张哲瀚","27")
+        console.log(jjy.sing);
+        console.log(zzh.sing);
+        console.log(jjy.sing === zzh.sing);
+    </script>
+</body>
+</html>

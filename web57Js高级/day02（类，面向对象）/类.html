@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这里class后面的name不能加括号
+        class Star {
+            // 并不是原型对象里面的constructor，只是一个函数名字，这个函数在new时自动执行
+            constructor(uname,age){
+                this.uname=uname;
+                this.age  =age;
+            }//这里不用用逗号隔开
+            sing(song) {
+                console.log(this.uname + "《"+song+"》");
+            }
+        }
+        var jjy = new Star("鞠婧祎","26")
+        console.log(jjy);
+        jjy.sing("古画")
+    </script>
+</body>
+</html>

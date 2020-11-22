@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let 关键字声明的变量有暂时性死区的性质：解释如下
+        var a = 10
+        if(true) {
+            console.log(a);//这里本来是输出为10，但是由于在if块级作用于下用let声明了a变量，【使得a作用于整个if块级作用域里面】，然后let声明不存在变量提升，因此这里输出【a is not define】
+            let a = 0
+        }
+    </script>
+</body>
+</html>

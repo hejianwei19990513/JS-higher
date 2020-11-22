@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //扩展运算符用于数组合并
+        var arr1 = [1,2,3,4]
+        var arr2 = [5,6,7,8]
+        var arr3 = [ ...arr1,...arr2]
+        /* // 一般方法
+        console.log(arr1.concat(arr2));
+ */
+        // 方法1
+        console.log(arr3);
+
+        // 方法2
+        arr1.push(...arr2)
+        console.log(arr1);
+    </script>
+</body>
+</html>

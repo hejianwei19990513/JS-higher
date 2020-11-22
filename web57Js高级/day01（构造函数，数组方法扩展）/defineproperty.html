@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  注意： Object.defineProperty() 第三个参数descriptor 是以对象的形式书写
+        //  (1) value: 设置属性的值  默认underfind
+        //  (2) writable: 属性值是否可以修改  true|false 【定义的新属性默认 都是false！！！！！】
+        //  (3) enumerable: 目标属性是否可以被枚举（遍历）  true|false 默认为 false；【定义的新属性默认 都是false！！！！！】
+        //  (4) configurable: 目标属性是否可以被删除或是可以再次修改(特性)  true|false 默认为 false；【通过Object.defineProperty()定义的新属性默认 都是false！！！！！】
+        var obj = {
+            name:"鞠婧祎",
+            age :"26",
+            type:"女神"
+        }
+        Object.defineProperty(obj,"sex",{
+            value:"女"
+        })
+        console.log(obj);
+
+
+        Object.defineProperty(obj,"age",{
+            value:"18"
+        })// 这里age不是定义的【新】属性，所以writable相当于true
+
+
+        Object.defineProperty(obj,"sing",{
+            value:"古画",
+            enumerable:false
+        })// 这里sing是定义的【新】属性，所以enumerable默认为false，不能被枚举（遍历）
+        console.log(obj);
+        var arr = Object.keys(obj)//遍历对象属性，返回的是个数组
+        console.log(arr);
+
+
+        Object.defineProperty(obj,"flim",{
+            value:"如意芳菲",
+            configurable:false
+        })// 这里flim是定义的【新】属性，所以enumerable默认为false，不能被删除
+        delete obj.flim
+        delete obj.age//这里age不是新定义的属性，相当于enumerable默认为true，所以会被删
+        console.log(obj);
+
+    </script>   
+</body>
+</html>

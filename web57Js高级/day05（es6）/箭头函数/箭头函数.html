@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fun = ()=>{
+            return 123;
+        }
+        fun()
+
+        // 当函数体只有一行代码时，大括号可以省略（如果是return，那么return也要省略）
+        var fn = ()=> 123;
+        console.log(fn());
+
+        // 当函数体只有一个形参时，小括号可以省略
+        var fn1 = v => v
+        console.log(fn1(1));
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age) {
+            this.uname=uname;
+            this.age = age;
+            this.sing = function(){
+                alert("小鞠是我女神哦")
+            }
+        }
+        var jjy = new Star("鞠婧祎","26")
+        // 实例成员指在构造函数里面this添加的属性，只能通过实例化对象来访问（这里指jjy）
+        console.log(jjy.uname);
+        // console.log(Star.uname);//这里输出为untifined
+
+        // 静态成员指在构造函数本身上添加的静态成员，只能通过构造函数来访问（这里指）
+        Star.sex = "女"
+        console.log(Star.sex);
+        // console.log(jjy.sex);//不能通过实例化对象来访问，所以这里输出为untifined
+    </script>
+</body>
+</html>

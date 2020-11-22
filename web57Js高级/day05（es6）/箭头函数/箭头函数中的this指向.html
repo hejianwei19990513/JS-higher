@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn() {
+            console.log(this);
+            return ()=>{
+                // 箭头函数里面的this指向上下文所在区域的this
+                console.log(this);
+            }
+        }
+        var obj = {name:"小鞠女神"}
+
+        var a = fn.call(obj)
+        a()//这里因为fn.call(obj)调用了函数并且使得fn里面的this指向了obj，所以箭头函数里面的this也指向obj 
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 变量和对象属性一一对应，如果变量长度比对象多，多余的部分输出undefined
+        var obj = {
+            name: "鞠婧祎",
+            type: "女神"
+        }
+        var { name, type } = obj
+        console.log(name);
+        console.log(type);
+
+        // 变量和对象属性值一一对应，如果属性对应的变量（也就是属性值）长度比对象属性值多，多余的部分输出undefined
+        var { name: myname, type: mytype } = obj
+        console.log(myname);
+        console.log(mytype);
+    </script>
+</body>
+
+</html>

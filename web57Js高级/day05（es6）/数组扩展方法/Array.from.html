@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将伪数组转化为真数组
+        var arralike = {
+            0:0,
+            1:1,
+            length:2
+        }
+        // 第一个参数是伪数组，将其变成真数组，第二个参数是回调函数，对数组里面的属性值乘以2
+        var arr = Array.from(arralike,item => item*2)
+        console.log(arr);
+    </script>
+</body>
+</html>

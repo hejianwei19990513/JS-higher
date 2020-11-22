@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    正则表达式在线测试官网https://c.runoob.com/
+    <script>
+        // 在正则里面，大括号{}表示重复次数，中括号[]表示匹配中括号里面的任意字符，小括号()表示优先级
+        var reg = /^abc{3}$/ //这里表示c重复三次
+        console.log(reg.test("abccc"));//只有这个才是true
+        console.log(reg.test("abcabcabc"));//false
+        var reg1= /^(abc){3}$/ //这里表示abc重复三次
+        console.log(reg1.test("abcabcabc"));//只有这个才是true
+    </script>
+</body>
+</html>

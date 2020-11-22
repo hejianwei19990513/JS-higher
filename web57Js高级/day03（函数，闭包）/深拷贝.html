@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:"鞠婧祎",
+            age :"26",
+            sing:{
+                name:"古画"
+            }
+        }
+        var o = {}
+        function deepCopy(newobj,oldobj) {
+            for(k in oldobj) {
+                var item = oldobj[k]
+                if(item instanceof Array) {
+                    newobj[k] = []
+                    deepCopy(newobj[k],item)
+                } else if(item instanceof Object) {
+                    newobj[k] = {}
+                    deepCopy(newobj[k],item)
+                } else {
+                    newobj[k] = oldobj[k]
+                }
+            }
+            return newobj
+        }
+        console.log(deepCopy(o,obj));
+        // 深拷贝这里拷贝的是obj的sing属性的属性值【重新】复制出来的另一个地址，所以修改新对象o里面的sing属性内部的name属性值【不会影响到】原来对象obj的sing属性内部的name属性值
+        o.sing.name = "天长"
+        console.log(obj);//这里的sing属性内部的name属性值【还是古画】
+    </script>
+</body>
+</html>

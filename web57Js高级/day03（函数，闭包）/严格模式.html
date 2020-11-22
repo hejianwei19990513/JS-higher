@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 下面的代码都会使用严格模式
+        "use strict"
+    </script>
+    <script>
+            (function () {
+                function fn() {
+                    // 为这个fn函数开启严格模式，只会影响当前作用域
+                    "use strict"
+                }
+                function fn() {
+                    //  这里还是普通模式 
+                }
+            })()
+    </script>
+</body>
+
+</html>

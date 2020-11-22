@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>an</button>
+    <script>
+        var that
+        class F {
+            constructor(uname){
+                that = this
+                this.uname = uname;
+                this.btn = document.querySelector('button')
+                this.btn.onclick = this.sing
+            }
+            sing(){
+                // 这里的this指的是jjy.btn，因为btn里面没有name属性，所以输出undefined
+                // console.log(this.uname);
+
+                // 解决方法:在外面声明一个全局变量that。让that指向jjy而不是jjy.btn
+                console.log(that.uname);
+            }
+        }
+        var jjy = new F("鞠婧祎")
+        // console.log(jjy);
+    </script>
+</body>
+</html>

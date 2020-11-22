@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // [abc]只要包含abc其中一个
+        var reg = /[abc]/
+        console.log(reg.test("baby"));//true
+        console.log(reg.test("def"));//false
+        console.log("------------------------");
+
+
+
+        // ^[abc]$ 【^[]$里面只能有一个字符】只能是a或者b或者c
+        var reg = /^[abc]$/
+        console.log(reg.test("a"));//true
+        console.log(reg.test("abc"));//false
+        console.log("------------------------");
+
+
+
+        // -连接范围，这里只能是小写的a-z
+        var reg = /^[a-z]$/
+        console.log(reg.test("a"));//true
+        console.log(reg.test("A"));//false
+        console.log("------------------------");
+
+
+
+        // 字符组合，这里可以是小写的a-z也可以是大写A-Z（也可以加下划线_和连接符—）
+        var reg = /^[a-zA-Z0-9_-]$/
+        console.log(reg.test("a"));//true
+        console.log(reg.test("A"));//true
+        console.log(reg.test("!"));//false
+        console.log("------------------------");
+
+
+        // 如果在中括号里面加^表示取反的意思
+        var reg = /^[^a-zA-Z0-9_-]$/
+        console.log(reg.test("a"));//false
+        console.log(reg.test("A"));//false
+        console.log(reg.test("!"));//true
+    </script>
+</body>
+</html>

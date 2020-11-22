@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式第一种表达方式
+        var regexp = new RegExp(/123/)
+
+
+        // 正则表达式第二种表达方式
+        var reg = /123/
+        // test方法来检测字符串是否符合正则表达式的要求规范
+        console.log(reg.test(12345));//true
+        console.log(reg.test("asbc"));//false
+    </script>
+</body>
+</html>

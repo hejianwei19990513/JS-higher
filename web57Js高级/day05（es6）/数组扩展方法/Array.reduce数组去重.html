@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //详情解释见day01的数组扩展方法
+        var arr = [1,2,3,4,5,6,7,2,3,4,5]
+        var newArr = arr.reduce((acc,item,index)=>{
+            if(acc.includes(item) == false) {
+                acc.push(item)
+            }
+            return acc
+        },[])
+        console.log(newArr);
+    </script>
+</body>
+</html>

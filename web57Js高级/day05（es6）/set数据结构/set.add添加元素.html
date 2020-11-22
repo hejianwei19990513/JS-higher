@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4]
+        var s = new Set(arr);
+        console.log(s);//因为下面s.add("a").add("b").add("a")相当于被提升了，所以输出1,2,3,4,"a","b"
+        s.add("a").add("b").add("a")
+        console.log(s);//还是输出为1,2,3,4,一个a,一个b
+    </script>
+</body>
+</html>

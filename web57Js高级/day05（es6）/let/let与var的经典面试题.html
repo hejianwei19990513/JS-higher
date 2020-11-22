@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var:
+        var arr = []
+        for (var i = 0; i < 2; i++) {
+            arr[i] = function () {
+                console.log(i);
+            }
+        }
+        arr[0]();
+        arr[1]();
+        //这里输出为2和2，因为在for循环里面用var声明的变量为全局变量，所以有 arr[0]=function(){console.log(i);} arr[1]=function(){console.log(i);}，等循环完，再调用的时候，i已经变成2了，所以输出为两个2
+
+
+        // let:
+        let arr = []
+        for (let i = 0; i < 2; i++) {
+            arr[i] = function () {
+                console.log(i);
+            }
+        }
+        arr[0]();
+        arr[1]();
+        // 这里输出为0和1，因为在for循环里面用let声明的变量为块级作用域，而在循环的这两次中，产生了两个块级作用域   for (let i = 0; i < 2; i++) {
+        //     arr[0] = function () {
+        //         console.log(i);
+        //     }
+        // }和
+        // for (let i = 1; i < 2; i++) {
+        //     arr[1] = function () {
+        //         console.log(i);
+        //     }
+        // }
+        // 在循环完，调用这两个函数时，arr[0]()里面的i在第一个for里面的块级作用域下，所有输出为0，同理arr[1]()输出为1
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const声明变量时不能修改【内存地址】
+        const a = 10;
+        // a = 0
+        console.log(a);//报错，因为const声明的变量不能修改内存地址
+
+        const arr = [100,200]
+        arr[0] = 1
+        arr[1] = 2
+        console.log(arr);//不会报错，因为arr[0]没有修改arr的内存地址，但是会影响arr数组，所以输出为[1,2]
+        arr = [1,2]//报错，显示不能修改内存地址
+    </script>
+</body>
+</html>
